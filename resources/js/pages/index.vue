@@ -3,5 +3,5 @@ const message = 'Vue 3 + TypeScript!'
 </script>
 
 <template>
-  <main>Hello, {{ message }}</main>
+  <main class="font-semibold underline">Hello, {{ message }}</main>
 </template>

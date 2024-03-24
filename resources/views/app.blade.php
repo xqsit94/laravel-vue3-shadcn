@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Personal Finance App</title>
 
+        @vite('resources/css/app.css')
         @vite('resources/js/app.ts')
         @inertiaHead
     </head>
