@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const message = 'Vue 3 + TypeScript!'
+</script>
+
 <template>
-  <main>Intertia Home Page</main>
+  <main>Hello, {{ message }}</main>
 </template>
