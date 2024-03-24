@@ -1,0 +1,12 @@
+#!/bin sh
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+echo "Running Pint ..."
+sail pint --dirty
+
+echo "Running tests ..."
+sail test
+
+echo "Running type-check & lint ..."
+bun run type-check
+bun run lint-staged
