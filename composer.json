@@ -1,9 +1,8 @@
 {
-    "name": "xqsit94/personal-finance",
-    "type": "project",
-    "description": "Personal Finance",
+    "name": "xqsit94/laravel-vue3-shadcn",
+    "type": "template",
+    "description": "A boilerplate template for laravel 11 which tailored with intertia, vue3, typescript and shadcn/ui",
     "keywords": [
-        "personal finance",
         "laravel",
         "inertiajs",
         "vuejs",
