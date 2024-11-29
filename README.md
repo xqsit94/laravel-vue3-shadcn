@@ -25,50 +25,78 @@ These instructions will get you a copy of the boilerplate up and running on your
 
 ### Installation
 
-1. Clone the repository
+**Step 1. Clone the repository**
 
 ```bash
 git clone https://github.com/xqsit94/laravel-vue3-shadcn.git
 ```
 
-2. Open the project folder in Visual Studio Code.
-
-3. When prompted to "Reopen in Container", click "Reopen in Container". This will start the build of the Docker container defined in the `.devcontainer` folder.
-
-4. Once the build is complete, you'll automatically be connected to the container. All commands from here are run inside the container.
-
-5. Install PHP dependencies
-
-```bash
-sail composer install
-```
-
-6. Install JavaScript dependencies
-
-```bash
-bun install
-```
-
-7. Copy .env.example and create a .env file
+**Step 2. Copy .env.example and create a .env file**
 
 ```bash
 cp .env.example .env
 ```
+Ensure to update any necessary environment variables in the .env file, including database settings.
 
-8. Generate a new application key
+**Step 3. Install Composer dependencies**
 
 ```bash
-sail php artisan key:generate
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
 ```
 
-9. Run the database migrations (Set the database connection in .env before migrating)
+**Step 4. Open the project folder in Visual Studio Code.**
 
 ```bash
-sail php artisan migrate
+code .
 ```
 
-10. Run the application in development mode
+**Step 5. When prompted to "Reopen in Container", click "Reopen in Container". This will start the build of the Docker container defined in the `.devcontainer` folder.**
+
+**Step 6. Once the build is complete, you'll automatically be connected to the container. All commands from here are run inside the container.**
+
+**Step 7. Install JavaScript dependencies**
 
 ```bash
+bun install
+```
+If you want to use other package managers like npm, yarn or pnpm, remove the `bun.lockb` file and use the appropriate command.
+```bash
+rm bun.lockb
+
+# for npm
+npm install
+
+# for yarn
+yarn install
+
+# for pnpm
+pnpm install
+```
+
+**Step 8. Generate a new application key**
+
+```bash
+./vendor/bin/sail php artisan key:generate
+```
+
+**Step 9. Run the database migrations (Set the database connection in .env before migrating)**
+
+```bash
+./vendor/bin/sail php artisan migrate
+```
+
+**Step 10. Run the application in development mode**
+
+```bash
+# use appropriate package manager
 bun run dev
 ```
+
+**Finally. Access the Application**
+
+Open your browser and navigate to the appropriate URL to access the application (e.g., http://localhost).
