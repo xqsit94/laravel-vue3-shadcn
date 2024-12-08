@@ -100,3 +100,16 @@ bun run dev
 **Finally. Access the Application**
 
 Open your browser and navigate to the appropriate URL to access the application (e.g., http://localhost).
+
+## Troubleshooting
+
+### PostgreSQL Not Connecting
+
+If you encounter issues with PostgreSQL not connecting, you may need to reset the database volume. Use the following commands:
+
+```bash
+./vendor/bin/sail down -v
+./vendor/bin/sail up
+```
+
+This will remove the existing database volume and reinitialize it.
