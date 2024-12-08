@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Personal Finance App</title>
+        <title>Laravel, Vue3 and Inertia JS</title>
 
+        @routes
         @vite('resources/css/app.css')
         @vite('resources/js/app.ts')
         @inertiaHead
